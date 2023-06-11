@@ -1,0 +1,242 @@
+.adminContainer {
+  background-color: #ffffff;
+  height: calc(100vh - 66px);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.admintableanduser {
+  background-color: white;
+  width: 1000px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+tr {
+  width: 100%;
+  display: inline-table;
+  table-layout: fixed;
+  border-bottom: 1px solid rgb(221, 219, 219);
+}
+
+table {
+  border-collapse: collapse;
+  height: calc(100vh - 256px);
+  display: block;
+  margin-top: 0px;
+  overflow-y: scroll;
+}
+
+.gridContainerHeader {
+  position: fixed;
+  background-color: white;
+  width: 1000px;
+  border-radius: 8px;
+}
+
+.gridContainerBody:first-child {
+  margin-top: 70px;
+}
+
+table th:first-child {
+  border-radius: 8px 0 0 0;
+}
+
+table th:last-child {
+  border-radius: 0 8px 0 0;
+}
+
+table::-webkit-scrollbar-track {
+  border: none;
+  margin: 70px 0px 0px 0px;
+  background-color: transparent;
+}
+
+table::-webkit-scrollbar {
+  width: 4px;
+  margin-left: -10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+table::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #0f143a;
+  border: 1px solid rgba(15, 20, 58, 0.08);
+}
+
+th {
+  padding: 30px 15px 20px 15px;
+}
+
+td {
+  text-align: center;
+  padding: 15px;
+}
+
+.gridItemName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.profilenameandpic {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+}
+
+.gridItemName img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.gridItemModify button {
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color: #107fe4;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 15px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.delete {
+  margin-left: calc(50% - 5px);
+  color: red;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.addUser {
+  display: block;
+  border: 0.5px solid rgb(221, 219, 219);
+}
+
+.addUserButton {
+  font-family: "Montserrat", sans-serif;
+  float: right;
+  margin: 20px;
+  text-decoration: none;
+  border: none;
+  color: white;
+  background-color: green;
+  padding: 8px 17px;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.gridEmptyBody {
+  margin-top: 100px;
+  margin-left: 390px;
+  font-weight: 500;
+}
+
+@media only screen and (max-width: 1080px) {
+  .admintableanduser {
+    width: calc(100% - 20px);
+  }
+
+  tr {
+    width: 1100px;
+    display: inline-table;
+    table-layout: fixed;
+    border-bottom: 1px solid rgb(221, 219, 219);
+  }
+
+  table {
+    border-collapse: collapse;
+    height: calc(100vh - 225px);
+    display: block;
+    margin-top: 0px;
+    overflow-x: scroll;
+    width: calc(100vw - 20px);
+  }
+
+  .gridContainerHeader {
+    position: relative;
+    width: 1100px;
+  }
+
+  .gridContainerBody:first-child {
+    margin-top: 0px;
+  }
+
+  .addUser {
+    display: block;
+    border: none;
+  }
+
+  .addUserButton {
+    font-family: "Montserrat", sans-serif;
+    float: right;
+    margin: 30px 20px;
+    text-decoration: none;
+    border: none;
+    color: white;
+    background-color: green;
+    padding: 8px 17px;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .gridEmptyBody {
+    margin-top: 70px;
+    margin-left: calc(50vw - 110px);
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .admintableanduser {
+    width: calc(100% - 20px);
+  }
+
+  tr {
+    width: 650px;
+    display: inline-table;
+    table-layout: fixed;
+    border-bottom: 1px solid rgb(221, 219, 219);
+  }
+
+  table {
+    border-collapse: collapse;
+    height: calc(100vh - 225px);
+    display: block;
+    margin-top: 0px;
+    overflow-x: scroll;
+    width: calc(100vw - 20px);
+  }
+
+  .gridContainerHeader {
+    position: relative;
+    width: 650px;
+  }
+
+  .profilenameandpic {
+    display: flex;
+    align-items: center;
+    margin-left: 14px;
+  }
+
+  .gridContainerBody:first-child {
+    margin-top: 0px;
+  }
+
+  .addUser {
+    display: block;
+    border: none;
+  }
+}

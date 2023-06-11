@@ -1,0 +1,108 @@
+.addUserForm {
+  background-color: white;
+  padding: 25px 50px 25px 50px;
+  width: 500px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  position: absolute;
+  right: 0;
+  z-index: 100;
+  top: 66px;
+  animation: dr 0.5s linear 0s forwards;
+  min-height: calc(100vh - 66px);
+}
+
+@keyframes dr {
+  0% {
+    transform: translateX(500px);
+  }
+
+  50% {
+    transform: translateX(250px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+.cross {
+  font-size: 30px;
+  cursor: pointer;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.userHeading {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.addUserLabel {
+  font-size: 18px;
+  padding-bottom: 10px;
+  font-weight: 500;
+}
+
+.addUserInput {
+  padding-bottom: 10px;
+}
+
+.addUserInput input {
+  width: calc(100% - 24px);
+  height: 36px;
+  border-radius: 8px;
+  outline: none;
+  border: 1px solid black;
+  padding: 0px 12px;
+  font-size: 18px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.buttons{
+  margin-top: 14px;
+}
+
+.addUserSubmit {
+  background-color: #107fe4;
+  border: none;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 30px;
+  font-family: "Montserrat", sans-serif;
+}
+
+@media only screen and (max-width: 640px) {
+  .addUserForm {
+    background-color: white;
+    padding: 40px 50px 40px 50px;
+    width: calc(100vw - 100px);
+    border-radius: 0px;
+    position: absolute;
+    right: 0;
+    z-index: 100;
+    top:55px;
+    height: calc(100vh - 145px);
+    animation: dr 0.5s linear 0s forwards;
+  }
+
+  @keyframes dr {
+    0% {
+      transform: translateX(360px);
+    }
+
+    50% {
+      transform: translateX(180px);
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}

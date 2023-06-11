@@ -1,0 +1,213 @@
+.mainContainer {
+  min-height: 100vh;
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+.leftContainer {
+  background-color: #ffffff;
+  flex-basis: 50%;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.innerleftContainer {
+  box-shadow: 0 -4px 8px -5px rgba(185, 184, 184, 0.75),
+    0 4px 10px -5px rgba(115, 115, 115, 0.75),
+    -4px 0 10px -5px rgba(115, 115, 115, 0.75);
+  height: 360px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 420px;
+  padding: 20px 40px;
+}
+
+.bestViewhead {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.bestViewhead span {
+  color: #107fe4;
+}
+
+.bestViewsubhead {
+  font-size: 20px;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+
+.signbuttondiv {
+  width: fit-content;
+}
+
+.signbutton {
+  text-decoration: none;
+  border: none;
+  width: 100px;
+  height: 45px;
+  font-size: 16px;
+  background-color: #107fe4;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  border-radius: 40px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+}
+
+.signbutton:hover {
+  background-color: black;
+}
+
+.signInContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  animation: sign 0.5s;
+}
+
+@keyframes sign {
+  0%{
+    opacity: 0;
+  }
+  50%{
+    opacity: 0.5;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+.heading {
+  margin-bottom: 30px;
+  font-weight: 500;
+  font-size: 36px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.inputBoxIn {
+  width: 300px;
+  height: 30px;
+  padding: 10px 20px;
+  font-size: 20px;
+  background-color: rgb(223, 220, 220);
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+.inputBox {
+  margin-bottom: 20px;
+}
+
+.signinButton {
+  text-decoration: none;
+  margin-top: 10px;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-color: #107fe4;
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+.rightContainer {
+  background-color: #107fe4;
+  flex-basis: 50%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 1000px;
+}
+
+.innerrightContainer {
+  box-shadow: 0 -10px 20px -5px rgba(115, 115, 115, 0.75),
+    0 10px 20px -5px rgba(115, 115, 115, 0.75),
+    10px 0 20px -5px rgba(115, 115, 115, 0.75);
+  height: 400px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Loginimage {
+  width: 500px;
+  height: 350px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .mainContainer{
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+
+  .rightContainer {
+    flex-basis: 100%;
+    min-height: auto;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .innerrightContainer {
+    margin-top: 50px;
+  }
+
+  .leftContainer {
+    flex-basis: 100%;
+    min-height: auto;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .innerleftContainer {
+    margin-bottom: 50px;
+  }  
+}
+
+@media only screen and (max-width: 640px) {
+  .innerleftContainer{
+    width: 220px;
+    height: auto;
+  }
+
+  .bestViewhead {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+  
+  .bestViewsubhead {
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 20px;
+  }  
+
+  .inputBoxIn{
+    width: 200px;
+    font-size: 16px;
+  }
+
+  .Loginimage {
+    width: 300px;
+    height: 300px;
+  }
+}

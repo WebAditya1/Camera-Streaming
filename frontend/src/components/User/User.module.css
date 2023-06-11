@@ -1,0 +1,104 @@
+.userContainer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 50px 100px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.userViews {
+  display: flex;
+  flex-direction: column;
+}
+
+.viewHeading {
+  font-size: 36px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 150%;
+}
+
+.viewsubHeading {
+  margin-top: 20px;
+  margin-bottom: 48px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  line-height: 125%;
+}
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  justify-content: center;
+  text-align: center;
+}
+
+.eachvideo {
+  margin-bottom: 40px;
+}
+
+.eachvideoname {
+  margin-bottom: 20px;
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.userViewItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userViewItem video {
+  width: 640px;
+  height: 360px;
+}
+
+@media only screen and (max-width: 1080px) {
+  .userContainer {
+    padding: 50px;
+  }
+
+  .userViewItem video {
+    width: 480px;
+    height: 270px;
+  }
+
+  .videos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .userContainer{
+    padding: 20px;
+  }
+
+  .viewHeading {
+    font-size: 24px;
+  }
+  
+  .viewsubHeading {
+    margin-top: 20px;
+    margin-bottom: 48px;
+    font-size: 14px;
+  }
+
+  .userViewItem video {
+    width: 320px;
+    height: 180px;
+  }
+
+  .videos {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
