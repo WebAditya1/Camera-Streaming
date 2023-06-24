@@ -1,14 +1,11 @@
-import React, { useEffect, useState, useContext } from "react";
-import { useNavigate, Navigate } from "react-router-dom";
+import React, {useState, useContext} from "react";
+import { useNavigate} from "react-router-dom";
 import styles from "./Nav.module.css";
 import logo from "../../images/logo.png";
-import Spinner from "../Spinner/Spinner";
 import { AuthContext } from "../../App";
 
 function Navbar() {
-  const [spin, setSpin] = useState(false);
-  const [show, toggleShow] = React.useState(false);
-  const [open, setOpen] = useState(false);
+  const [show, toggleShow] = useState(false);
   const auth = useContext(AuthContext);
   const { authenticated, toggleAuthentication } = auth;
   const navigate = useNavigate();
@@ -22,8 +19,6 @@ function Navbar() {
 
   return (
     <>
-      {open ? <Navigate to="/" /> : null}
-      {spin ? <Spinner /> : null}
       <div className={styles.Navbar}>
         <div className={styles.logo}>
           <img src={logo} alt="Logo"></img>

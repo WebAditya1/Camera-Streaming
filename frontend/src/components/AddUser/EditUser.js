@@ -5,6 +5,7 @@ import Backdrop from "../Backdrop/Backdrop";
 import axios from "axios";
 import Spinner from "../Spinner/Spinner";
 import { API } from "../../config";
+import ReactHlsPlayer from "react-hls-player";
 
 function EditUser({ setEditOpen, getData, profile }) {
   const [spin, setSpin] = useState(false);
@@ -174,13 +175,24 @@ function EditUser({ setEditOpen, getData, profile }) {
                       }
                       id="camera"
                       name="camera"
-                      checked = {selectedCamera.find((v) => v === i._id)}
+                      checked={selectedCamera.find((v) => v === i._id)}
                     />
                     <span
                       style={{ marginLeft: "10px" }}
                       className={styles.video}
                     >
-                      <video src={i.link} controls="controls" autoPlay="true" />
+                      <ReactHlsPlayer
+                        src={i.link}
+                        autoPlay={true}
+                        controls={true}
+                        width="100%"
+                        height="auto"
+                        hlsConfig={{
+                          maxLoadingDelay: 0,
+                          minAutoBitrate: 0,
+                          lowLatencyMode: true,
+                        }}
+                      />
                     </span>
                     <span className={styles.camname}>{i.cameraName}</span>
                   </label>

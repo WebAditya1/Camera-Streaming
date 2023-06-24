@@ -5,8 +5,9 @@ import Backdrop from "../Backdrop/Backdrop";
 import axios from "axios";
 import Spinner from "../Spinner/Spinner";
 import { API } from "../../config";
+import ReactHlsPlayer from "react-hls-player";
 
-function AddUser({ setOpen, getData}) {
+function AddUser({ setOpen, getData }) {
   const [spin, setSpin] = useState(false);
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
@@ -176,7 +177,18 @@ function AddUser({ setOpen, getData}) {
                       style={{ marginLeft: "10px" }}
                       className={styles.video}
                     >
-                      <video src={i.link} controls="controls" autoPlay="true" />
+                      <ReactHlsPlayer
+                        src={i.link}
+                        autoPlay={true}
+                        controls={true}
+                        width="100%"
+                        height="auto"
+                        hlsConfig={{
+                          maxLoadingDelay: 0,
+                          minAutoBitrate: 0,
+                          lowLatencyMode: true,
+                        }}
+                      />
                     </span>
                     <span className={styles.camname}>{i.cameraName}</span>
                   </label>
