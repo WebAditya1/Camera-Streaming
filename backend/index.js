@@ -7,7 +7,9 @@ require("dotenv").config();
 const port = process.env.PORT || 8000;
 
 // Middlewares
-app.use(cors());
+app.use(
+  cors({ allow: "http://ec2-16-16-245-42.eu-north-1.compute.amazonaws.com" })
+);
 app.use(express.json());
 app.use(express.urlencoded());
 
