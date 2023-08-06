@@ -1,0 +1,46 @@
+name: Deploy Backend on Scaleway Serverless
+
+on:
+  push:
+    branches:
+      - make-aws-compatible # Replace 'main' with your main branch name, if different
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16
+
+      - name: Build and Push Docker Image
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          DOCKER_IMAGE_NAME: camera-streaming-backend
+          DOCKER_IMAGE_TAG: latest
+        run: |
+          cd backend
+          pwd
+          docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG . --network=host
+          echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+          docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+          docker push $DOCKER_USERNAME/$DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG
+
+
+      - name: Deploy backend to Scaleway
+        env:
+          SCALEWAY_ACCESS_TOKEN: ${{ secrets.SCALEWAY_ACCESS_TOKEN }}
+        run: |
+          curl -X PATCH \
+               -H "X-Auth-Token: $SCALEWAY_ACCESS_TOKEN" \
+               -H "Content-Type: application/json" \
+               -d '{
+                    "image":"camera-streaming-backend:latest" 
+                   }' \
+               "https://api.scaleway.com/containers/v1beta1/regions/fr-par/containers/43c992e8-5874-4d94-87a6-1cddcedfdf62"
