@@ -22,13 +22,13 @@
   box-shadow: 0 -4px 8px -5px rgba(185, 184, 184, 0.75),
     0 4px 10px -5px rgba(115, 115, 115, 0.75),
     -4px 0 10px -5px rgba(115, 115, 115, 0.75);
-  height: 360px;
+  height: 450px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
   width: 420px;
-  padding: 20px 40px;
+  padding: 50px 40px;
 }
 
 .bestViewhead {
@@ -38,7 +38,7 @@
 }
 
 .bestViewhead span {
-  color: #107fe4;
+  color: #2c3b59;
 }
 
 .bestViewsubhead {
@@ -57,7 +57,7 @@
   width: 100px;
   height: 45px;
   font-size: 16px;
-  background-color: #107fe4;
+  background-color: #2c3b59;
   text-align: center;
   color: white;
   cursor: pointer;
@@ -79,55 +79,80 @@
   animation: sign 0.5s;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 @keyframes sign {
-  0%{
+  0% {
     opacity: 0;
   }
-  50%{
+  50% {
     opacity: 0.5;
   }
-  100%{
+  100% {
     opacity: 1;
   }
 }
 
 .heading {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   font-weight: 500;
-  font-size: 36px;
+  font-size: 30px;
   font-family: "Montserrat", sans-serif;
 }
 
 .inputBoxIn {
   width: 300px;
   height: 30px;
-  padding: 10px 20px;
-  font-size: 20px;
+  padding: 20px 20px;
+  font-size: 16px;
   background-color: rgb(223, 220, 220);
   outline: none;
   border: none;
   font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+}
+
+.inputBoxInDisabled {
+  width: 300px;
+  height: 30px;
+  padding: 20px 20px;
+  font-size: 16px;
+  background-color: rgb(205, 218, 255);
+  outline: none;
+  border: none;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
 }
 
 .inputBox {
-  margin-bottom: 20px;
+  margin-bottom: 12px;
 }
 
 .signinButton {
   text-decoration: none;
-  margin-top: 10px;
+  margin-top: 4px;
   border: none;
   font-size: 16px;
   padding: 10px 20px;
-  background-color: #107fe4;
+  background-color: #2c3b59;
   text-align: center;
   color: white;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  outline: none;
+  border-radius: 36px;
+}
+
+.signinButton:hover {
+  background-color: #000000;
 }
 
 .rightContainer {
-  background-color: #107fe4;
+  background-color: #2c3b59;
   flex-basis: 50%;
   min-height: 100vh;
   display: flex;
@@ -137,23 +162,33 @@
 }
 
 .innerrightContainer {
-  box-shadow: 0 -10px 20px -5px rgba(115, 115, 115, 0.75),
-    0 10px 20px -5px rgba(115, 115, 115, 0.75),
-    10px 0 20px -5px rgba(115, 115, 115, 0.75);
-  height: 400px;
+  box-shadow: 0 -5px 10px -5px rgba(115, 115, 115, 0.75),
+    0 5px 10px -5px rgba(115, 115, 115, 0.75),
+    5px 0 10px -5px rgba(115, 115, 115, 0.75);
+  height: 450px;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  width: 420px;
 }
 
 .Loginimage {
-  width: 500px;
-  height: 350px;
+  width: 300px;
+}
+
+.signupmessage {
+  margin-top: 16px;
+}
+
+.signupbutton {
+  text-decoration: underline;
+  color: blue;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 1080px) {
-  .mainContainer{
+  .mainContainer {
     flex-direction: column-reverse;
     justify-content: flex-end;
   }
@@ -165,7 +200,7 @@
     align-items: center;
     width: 100%;
   }
-  
+
   .innerrightContainer {
     margin-top: 50px;
   }
@@ -178,15 +213,20 @@
     justify-content: center;
     width: 100%;
   }
-  
+
   .innerleftContainer {
     margin-bottom: 50px;
-  }  
+  }
 }
 
 @media only screen and (max-width: 640px) {
-  .innerleftContainer{
-    width: 220px;
+  .innerleftContainer {
+    width: 300px;
+    height: auto;
+  }
+
+  .innerrightContainer {
+    width: 300px;
     height: auto;
   }
 
@@ -194,20 +234,24 @@
     font-size: 30px;
     margin-bottom: 16px;
   }
-  
+
   .bestViewsubhead {
     font-size: 16px;
     line-height: 20px;
     margin-bottom: 20px;
-  }  
+  }
 
-  .inputBoxIn{
-    width: 200px;
+  .inputBoxIn {
+    width: 240px;
+    font-size: 16px;
+  }
+
+  .inputBoxInDisabled {
+    width: 240px;
     font-size: 16px;
   }
 
   .Loginimage {
     width: 300px;
-    height: 300px;
   }
 }

@@ -7,6 +7,8 @@ import User from "./components/User/User";
 import Navbar from "./components/Navbar/Navbar";
 import WelcomeAdmin from "./components/WelcomeAdmin/WelcomeAdmin";
 import Camera from "./components/Camera/Camera";
+import Account from "./components/Login/Account";
+import Register from "./components/Login/Register";
 
 export const AuthContext = createContext(null);
 
@@ -33,17 +35,20 @@ function App() {
             element={
               authenticated ? (
                 authenticated?.isAdmin ? (
-                  <Navigate to="/admin"/>
+                  <Navigate to="/admin" />
                 ) : (
                   <>
-                    <Navigate to="/user"/>
+                    <Navigate to="/user" />
                   </>
                 )
               ) : (
-                <Login />
+                <Account />
               )
             }
           />
+          <Route path="/account" exact element={<Account/>} />
+          <Route path="/account/login" exact element={<Login />} />
+          <Route path="/account/register" exact element={<Register />} />
           <Route
             exact
             path="/admin"
