@@ -38,7 +38,7 @@ jobs:
           SCALEWAY_ACCESS_TOKEN: ${{ secrets.SCALEWAY_ACCESS_TOKEN }}
         run: |
           curl -X PATCH \
-               -H "X-Auth-Token: $SCW_SECRET_KEY" \
+               -H "X-Auth-Token: $SCALEWAY_ACCESS_TOKEN" \
                -H "Content-Type: application/json" \
                -d '{
                     "image":"camera-streaming-backend:latest" 
