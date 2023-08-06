@@ -19,10 +19,11 @@ RUN npm run build
 # Use a smaller nginx-based image to serve the production build
 FROM nginx:alpine
 
+# Remove default Nginx configurations
+RUN rm /etc/nginx/conf.d/default.conf
+
 # Copy the built React app from the previous stage to the nginx public directory
 COPY --from=0 /frontend/build /usr/share/nginx/html
-
-COPY ./nginx-configuration.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80 to make the app accessible outside the container
 EXPOSE 80
