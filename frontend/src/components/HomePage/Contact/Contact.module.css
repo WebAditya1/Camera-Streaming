@@ -1,0 +1,148 @@
+.contact {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 80px;
+  padding: 0px 100px;
+  padding-bottom: 40px;
+}
+
+.leftcontact {
+  flex-basis: 50%;
+  width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  margin-right: 50px;
+  display: flex;
+  padding: 30px;
+  flex-direction: column;
+}
+
+.leftcontacthead {
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.leftcontactsubhead {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.inputBoxIn {
+  width: 300px;
+  height: 30px;
+  padding: 10px 20px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+}
+
+.inputBoxTextArea {
+  width: 300px;
+  height: 60px;
+  padding: 10px 20px;
+  font-size: 16px;
+  outline: none;
+  border: none;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  font-family: "Montserrat", sans-serif;
+  border-radius: 10px;
+}
+
+.inputBox {
+  margin-bottom: 12px;
+}
+
+.signinButton {
+  text-decoration: none;
+  margin-top: 4px;
+  border: none;
+  font-size: 16px;
+  padding: 10px 20px;
+  background-image: -webkit-linear-gradient(140deg,
+      rgb(25, 18, 72) 0%,
+      rgb(111, 0, 247) 100%);
+  text-align: center;
+  color: white;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  outline: none;
+  border-radius: 36px;
+}
+
+.signinButton:hover {
+  background-image: -webkit-linear-gradient(140deg,
+      rgb(0, 0, 0) 0%,
+      rgb(0, 0, 0) 100%);
+}
+
+.rightcontact {
+  flex-basis: 50%;
+}
+
+.head {
+  color: #f87115;
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.subhead {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.subheaddesc {
+  font-size: 18px;
+  line-height: 130%;
+  margin-bottom: 20px;
+}
+
+.contactimage img {
+  width: 400px;
+}
+
+@media only screen and (max-width:1080px) {
+  .contact {
+    padding: 0px 50px;
+    padding-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width:960px) {
+  .contact {
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .leftcontact {
+    margin-top: 30px;
+    margin-right: 0px;
+    width: 400px;
+  }
+
+  .contactimage img {
+    display: none;
+  }
+}
+
+@media only screen and (max-width:640px) {
+  .leftcontact {
+    width: 260px;
+  }
+
+  .inputBoxIn {
+    width: 220px;
+  }
+
+  .inputBoxTextArea {
+    width: 220px;
+  }
+}

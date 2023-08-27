@@ -1,5 +1,5 @@
-import React, {useState, useContext} from "react";
-import { useNavigate} from "react-router-dom";
+import React, { useState, useContext } from "react";
+import { useNavigate, Link } from "react-router-dom";
 import styles from "./Nav.module.css";
 import logo from "../../images/logo.png";
 import { AuthContext } from "../../App";
@@ -14,29 +14,44 @@ function Navbar() {
     console.log("Hello");
     toggleAuthentication(null);
     localStorage.clear();
-    navigate('/');
+    navigate("/");
   };
 
   return (
     <>
       <div className={styles.Navbar}>
-        <div className={styles.logo}>
-          <img src={logo} alt="Logo"></img>
-        </div>
+        <Link to="/">
+          <div className={styles.logo}>
+            <img src={logo} alt="Logo"></img>
+          </div>
+        </Link>
         <div className={styles.rightNavbar}>
-          <div className={styles.hiAdmin}>Hi, {authenticated?.name}</div>
-          <button onClick={() => toggleShow(!show)}>
-            <div className={styles.profileImg}>
-              <img src={authenticated?.pic} alt="ProfilePic" />
-              {show && (
-                <div className={styles.dropdown}>
-                  <div className={styles.list} onClick={(e) => logout(e)}>
-                    Logout
-                  </div>
+          {!authenticated ? (
+            <Link to="/account">
+              <div className={styles.login}>
+                <button className={styles.loginbutton}>Login</button>
+              </div>
+            </Link>
+          ) : (
+            <>
+              <div className={styles.hiAdmin}>Hi, {authenticated?.name}</div>
+              <button
+                onClick={() => toggleShow(!show)}
+                className={styles.logoutbutton}
+              >
+                <div className={styles.profileImg}>
+                  <img src={authenticated?.pic} alt="ProfilePic" />
+                  {show && (
+                    <div className={styles.dropdown}>
+                      <div className={styles.list} onClick={(e) => logout(e)}>
+                        Logout
+                      </div>
+                    </div>
+                  )}
                 </div>
-              )}
-            </div>
-          </button>
+              </button>
+            </>
+          )}
         </div>
       </div>
     </>

@@ -12,7 +12,6 @@ function Register() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const [phoneNumber, setPhoneNumber] = useState();
   const [otp, setOtp] = useState();
   const [generatedotp, setGeneratedotp] = useState();
   const [verified, setVerified] = useState(false);
@@ -132,18 +131,6 @@ function Register() {
                   <div className={styles.inputBox}>
                     <input
                       className={styles.inputBoxIn}
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      placeholder="Phone Number"
-                      pattern="[0-9]{10}"
-                      onChange={(event) => setPhoneNumber(event.target.value)}
-                      required
-                    ></input>
-                  </div>
-                  <div className={styles.inputBox}>
-                    <input
-                      className={styles.inputBoxIn}
                       type="number"
                       id="otp"
                       name="otp"
@@ -189,17 +176,6 @@ function Register() {
                       name="password"
                       placeholder="Password"
                       onChange={(event) => setPassword(event.target.value)}
-                      required
-                    ></input>
-                  </div>
-                  <div className={styles.inputBox}>
-                    <input
-                      className={styles.inputBoxIn}
-                      type="number"
-                      id="phone"
-                      name="phone"
-                      placeholder="Phone Number"
-                      onChange={(event) => setPhoneNumber(event.target.value)}
                       required
                     ></input>
                   </div>

@@ -1,0 +1,155 @@
+.testimonials {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+  margin-top: 80px;
+  margin-bottom: 30px;
+}
+
+.head {
+  color: #F87115;
+  font-size: 30px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.subhead {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.subheaddesc {
+  width: 640px;
+  margin: auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.testimonial {
+  font-family: "Montserrat", sans-serif;
+  margin: auto;
+  width: 1000px;
+  color: black;
+  background-image: -webkit-linear-gradient(
+    140deg,
+    rgb(25, 18, 72) 0%,
+    rgb(111, 0, 247) 100%
+  );
+  display: flex;
+  align-items: center;
+  padding: 50px 0px;
+  border-radius: 16px;
+}
+
+.testimonials_text {
+  color: #ffffff;
+}
+
+.heading {
+  margin-top: 50px;
+  font-size: 30px;
+  letter-spacing: 0.1em;
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.subheading {
+  font-size: 24px;
+  letter-spacing: 0.05em;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.userimage img {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  border: 3px solid #ffffff;
+}
+
+.userName {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.stars {
+  color: #ffd700;
+  display: flex;
+  justify-content: center;
+}
+
+.stars > *:not(:last-child) {
+  margin-right: 8px;
+}
+
+.reviewanduser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.review {
+  margin-top: 20px;
+  margin-bottom: 14px;
+  max-width: 600px;
+}
+
+@media only screen and (max-width:1080px) {
+  .subheaddesc{
+    width: 500px;
+  }
+
+  .testimonial{
+    width: 600px;
+  }
+
+  .reviewanduser{
+    max-width: 600px;
+    font-size: 16px;
+  }
+
+  .review{
+    max-width: 450px;
+  }
+}
+
+@media only screen and (max-width:640px) {
+  .head{
+    font-size: 24px;
+  }
+
+  .subhead{
+    font-size: 30px;
+  }
+
+  .subheaddesc{
+    width: 300px;
+    font-size: 16px;
+  }
+
+  .testimonial{
+    width: 300px;
+  }
+
+  .testimonials_text{
+    max-width: 300px;
+    margin: auto;
+  }
+
+  .reviewanduser{
+    max-width: 300px;
+    font-size: 12px;
+  }
+
+  .review{
+    max-width: 240px;
+  }
+}

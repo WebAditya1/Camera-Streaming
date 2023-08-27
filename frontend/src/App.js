@@ -9,6 +9,8 @@ import WelcomeAdmin from "./components/WelcomeAdmin/WelcomeAdmin";
 import Camera from "./components/Camera/Camera";
 import Account from "./components/Login/Account";
 import Register from "./components/Login/Register";
+import HomePage from "./components/HomePage/HomePage";
+import Footer from "./components/Footer/Footer";
 
 export const AuthContext = createContext(null);
 
@@ -27,86 +29,86 @@ function App() {
 
   return (
     <AuthContext.Provider value={{ authenticated, toggleAuthentication }}>
-      <BrowserRouter>
-        <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              authenticated ? (
+      <div className="App">
+        <BrowserRouter>
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <>
+                  <Navbar />
+                  <HomePage />
+                  <Footer />
+                </>
+              }
+            />
+            <Route path="/account" exact element={<Account />} />
+            <Route path="/account/login" exact element={<Login />} />
+            <Route path="/account/register" exact element={<Register />} />
+            <Route
+              exact
+              path="/admin"
+              element={
                 authenticated?.isAdmin ? (
-                  <Navigate to="/admin" />
-                ) : (
-                  <>
-                    <Navigate to="/user" />
-                  </>
-                )
-              ) : (
-                <Account />
-              )
-            }
-          />
-          <Route path="/account" exact element={<Account/>} />
-          <Route path="/account/login" exact element={<Login />} />
-          <Route path="/account/register" exact element={<Register />} />
-          <Route
-            exact
-            path="/admin"
-            element={
-              authenticated?.isAdmin ? (
                 <>
                   <Navbar />
                   <WelcomeAdmin />
+                  <Footer />
                 </>
-              ) : (
-                <Login />
-              )
-            }
-          />
-          <Route
-            exact
-            path="/admin/camera"
-            element={
-              authenticated?.isAdmin ? (
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/admin/camera"
+              element={
+                authenticated?.isAdmin ? (
                 <>
                   <Navbar />
                   <Camera />
+                  <Footer />
                 </>
-              ) : (
-                <Login />
-              )
-            }
-          />
-          <Route
-            exact
-            path="/admin/user"
-            element={
-              authenticated?.isAdmin ? (
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/admin/user"
+              element={
+                authenticated?.isAdmin ? (
                 <>
                   <Navbar />
                   <Admin />
+                  <Footer />
                 </>
-              ) : (
-                <Login />
-              )
-            }
-          />
-          <Route
-            exact
-            path="/user"
-            element={
-              authenticated ? (
+                ) : (
+                  <Login />
+                )
+              }
+            />
+            <Route
+              exact
+              path="/user"
+              element={
+                authenticated ? (
                 <>
                   <Navbar />
                   <User />
+                  <Footer />
                 </>
-              ) : (
-                <Login />
-              )
-            }
-          />
-        </Routes>
-      </BrowserRouter>
+                ) : (
+                  <Login />
+                )
+              }
+            />
+          </Routes>
+        </BrowserRouter>
+      </div>
     </AuthContext.Provider>
   );
 }

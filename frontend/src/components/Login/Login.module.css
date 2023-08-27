@@ -1,3 +1,14 @@
+.transitionContainer {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.transitionContainer.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .mainContainer {
   min-height: 100vh;
   color: black;
@@ -38,7 +49,7 @@
 }
 
 .bestViewhead span {
-  color: #2c3b59;
+  color: #F87115;
 }
 
 .bestViewsubhead {
@@ -57,7 +68,7 @@
   width: 100px;
   height: 45px;
   font-size: 16px;
-  background-color: #2c3b59;
+  background-color: #1517CB;
   text-align: center;
   color: white;
   cursor: pointer;
@@ -89,9 +100,11 @@ input::-webkit-inner-spin-button {
   0% {
     opacity: 0;
   }
+
   50% {
     opacity: 0.5;
   }
+
   100% {
     opacity: 1;
   }
@@ -107,7 +120,7 @@ input::-webkit-inner-spin-button {
 .inputBoxIn {
   width: 300px;
   height: 30px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   font-size: 16px;
   background-color: rgb(223, 220, 220);
   outline: none;
@@ -119,7 +132,7 @@ input::-webkit-inner-spin-button {
 .inputBoxInDisabled {
   width: 300px;
   height: 30px;
-  padding: 20px 20px;
+  padding: 10px 20px;
   font-size: 16px;
   background-color: rgb(205, 218, 255);
   outline: none;
@@ -138,7 +151,7 @@ input::-webkit-inner-spin-button {
   border: none;
   font-size: 16px;
   padding: 10px 20px;
-  background-color: #2c3b59;
+  background-color: #1517CB;
   text-align: center;
   color: white;
   cursor: pointer;
@@ -152,7 +165,7 @@ input::-webkit-inner-spin-button {
 }
 
 .rightContainer {
-  background-color: #2c3b59;
+  background-color: #1517CB;
   flex-basis: 50%;
   min-height: 100vh;
   display: flex;
@@ -171,10 +184,12 @@ input::-webkit-inner-spin-button {
   flex-direction: column;
   justify-content: center;
   width: 420px;
+  padding: 50px 40px;
 }
 
 .Loginimage {
   width: 300px;
+  height: 500px;
 }
 
 .signupmessage {
@@ -221,12 +236,12 @@ input::-webkit-inner-spin-button {
 
 @media only screen and (max-width: 640px) {
   .innerleftContainer {
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 
   .innerrightContainer {
-    width: 300px;
+    width: 250px;
     height: auto;
   }
 
@@ -252,6 +267,6 @@ input::-webkit-inner-spin-button {
   }
 
   .Loginimage {
-    width: 300px;
+    width: 250px;
   }
 }

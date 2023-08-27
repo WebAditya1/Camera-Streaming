@@ -1,8 +1,8 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import styles from "./User.module.css";
 import ReactHlsPlayer from "react-hls-player";
 
-function Live({camera}) {
+function Live({ camera }) {
   const [authenticated] = useState(
     localStorage.getItem("Authentication") != null
       ? JSON.parse(localStorage.getItem("Authentication"))
@@ -12,7 +12,7 @@ function Live({camera}) {
   return (
     <div className={styles.videos}>
       {camera.map((i, index) => {
-        if (authenticated.views.includes(i._id)) {
+        if (authenticated?.views.includes(i._id)) {
           return (
             <div className={styles.eachvideo}>
               <div className={styles.eachvideoname}>{i.cameraName}</div>

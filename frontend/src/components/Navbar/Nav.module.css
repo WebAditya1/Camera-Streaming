@@ -1,17 +1,22 @@
 .Navbar {
   display: flex;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 5px 20px;
   align-items: center;
-  background-color: #107fe4;
+  background-color: #FFFFFF;
   font-family: "Montserrat", sans-serif;
   position: sticky;
   top: 0px;
   z-index: 101;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 54px;
 }
 
 .logo img {
-  height: 40px;
+  height: 100%;
 }
 
 .rightNavbar {
@@ -20,7 +25,29 @@
   color: white;
 }
 
-.rightNavbar button {
+.login {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginbutton {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background-color: #f87115;
+  color: #FFFFFF;
+  padding: 10px 24px;
+  border-radius: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+}
+
+.hiAdmin {
+  color: #000000;
+}
+
+.logoutbutton {
   text-decoration: none;
   border: none;
   cursor: pointer;
@@ -75,7 +102,7 @@
 }
 
 @media only screen and (max-width: 640px) {
-  .logo img {
+  .logo{
     height: 30px;
   }
 
@@ -84,6 +111,11 @@
   }
 
   .Navbar {
-    padding: 5px 10px;
+    padding: 10px 16px;
+  }
+
+  .loginbutton{
+    padding: 5px 12px;
+    font-size: 12px;
   }
 }
