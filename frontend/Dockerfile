@@ -25,7 +25,7 @@ COPY --from=0 /frontend/build /usr/share/nginx/html
 COPY ./nginx-configuration.conf /etc/nginx/conf.d/default.conf
 
 # Expose port 80 to make the app accessible outside the container
-EXPOSE 80
+EXPOSE 8080
 
 # Start the nginx server when the container runs
 CMD ["nginx", "-g", "daemon off;"]
