@@ -3,7 +3,7 @@ name: Deploy Backend on Scaleway Serverless
 on:
   push:
     branches:
-      - make-aws-compatible # Replace 'main' with your main branch name, if different
+      - main # Replace 'main' with your main branch name, if different
 
 jobs:
   deploy:
