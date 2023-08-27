@@ -4,7 +4,7 @@ FROM node:16-alpine
 # Set the working directory inside the container
 WORKDIR /frontend
 
-# Copy package.json and package-lock.json (or yarn.lock if you use Yarn) to the container
+# Copy package.json and package-lock.json to the container
 COPY package*.json ./
 
 # Install project dependencies
@@ -22,10 +22,11 @@ FROM nginx:alpine
 # Copy the built React app from the previous stage to the nginx public directory
 COPY --from=0 /frontend/build /usr/share/nginx/html
 
-COPY ./nginx-configuration.conf /etc/nginx/conf.d/default.conf
+# Remove the default nginx configuration
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 80 to make the app accessible outside the container
-EXPOSE 80
+# Expose port 80
+EXPOSE 8080
 
 # Start the nginx server when the container runs
 CMD ["nginx", "-g", "daemon off;"]
