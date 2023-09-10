@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import styles from "./Home.module.css";
 import icon1 from "../../../images/Homepage/Home/icon1.png";
 import icon2 from "../../../images/Homepage/Home/icon2.png";
@@ -19,6 +20,11 @@ function Home() {
             Stream the top sports networks and live games from major pro and
             college leagues, including the NFL, NBA, NCAA football, NHL, EPL
             soccer, MLB and more.
+          </div>
+          <div className={styles.streambutton}>
+            <Link to="/user">
+              <button className={styles.streambtn}>View Streams &rarr;</button>
+            </Link>
           </div>
         </div>
       </div>

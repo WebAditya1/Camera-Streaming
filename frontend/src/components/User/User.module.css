@@ -4,6 +4,7 @@
   flex-direction: column;
   padding: 50px 100px;
   font-family: "Montserrat", sans-serif;
+  background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(175, 203, 243) 74.6%);
 }
 
 .userViews {
@@ -34,7 +35,7 @@
 
 .videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(700px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   justify-content: center;
   text-align: center;
 }
@@ -167,6 +168,17 @@
   color: #FFFFFF;
   cursor: pointer;
   border: none;
+}
+
+@media only screen and (max-width: 1560px) {
+  .videos {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
+  .userViewItem video {
+    width: 400px;
+    height: 235px;
+  }
 }
 
 @media only screen and (max-width: 1080px) {

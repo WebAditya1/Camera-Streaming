@@ -28,15 +28,15 @@ function User() {
       <div className={styles.userContainer}>
         <div className={styles.userViews}>
           <div className={styles.viewHeading}>
-            Welcome to LiveEye
+            Welcome to How I Play 
             <br />
-            The ultimate CCTV camera streaming website!
+            The ultimate Sports streaming website!
           </div>
           <div className={styles.viewsubHeading}>
-            At LiveEye, we provide a cutting-edge platform for users to access
+            At How I Play, we provide a cutting-edge platform for users to access
             real-time video feeds from a vast network of high-quality CCTV
             cameras worldwide. Our website offers a seamless and immersive
-            experience, allowing you to observe various locations, events, and
+            experience, allowing you to observe various locations, sports, and
             landmarks from the comfort of your own device.
           </div>
           {/* <div className={styles.toggle}>

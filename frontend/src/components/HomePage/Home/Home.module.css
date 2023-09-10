@@ -58,6 +58,29 @@
   font-weight: 600;
 }
 
+.streambutton{
+  display: flex;
+  text-align: center;
+}
+
+.streambtn{
+  background-color: #f87115;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 12px 20px;
+  border-radius: 36px;
+  outline: none;
+  border: none;
+  font-weight: 700;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.streambtn:hover{
+  background-color: #FFFFFF;
+  color: #f87115;
+}
+
 .firstdesc {
   margin-right: 40px;
 }

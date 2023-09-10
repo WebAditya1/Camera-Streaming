@@ -1,5 +1,5 @@
 .addUserForm {
-  background-color: white;
+  background: radial-gradient(592px at 48.2% 50%, rgba(255, 255, 249, 0.6) 0%, rgb(175, 203, 243) 74.6%);
   padding: 25px 50px 25px 50px;
   width: 500px;
   border-top-left-radius: 10px;
